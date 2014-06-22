@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block nav-global %}
+<header>
+<nav>
+</nav>
+</header>
+{% endblock %}
+{% block content %}
+{% if v_articles %}
+{% for articles in v_articles %}
+{% if articles.published %}
+<h2 align='center'><a href="{{ articles.get_absolute_url }}">{{ articles.title }}</a></h2>
+<p align='center'>
+{{ articles.description }}
+<br>
+<br>
+<font color="GRAY">-- By {{ articles.author }}, Published at {{ articles.date }}</font>
+<br>
+<br>
+<font color="GRAY"> -------------------------------------------------------------------------------------------- </font>
+<br>
+</p>
+{% endif %}
+{% endfor %}
+{% else %}
+No article found
+{% endif %}
+{% endblock %}

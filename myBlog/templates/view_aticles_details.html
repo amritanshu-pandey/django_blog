@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block nav-global %}
+<nav>
+<ul>
+<li><a href='{% url 'blog' %}'>Home</a></li>
+<li><a href='{% url 'category' %}'>Categories</a></li>
+<li><a href='{% url 'admin:index' %}'>Admin</a></li>
+</ul>
+</nav>
+{% endblock %}
+{% load staticfiles %}
+{% block content %}
+{% if v_articles %}
+{% for articles in v_articles %}
+<h1 align='center'>{{ articles.title }}</h1>
+<p align='center'><font color='GREY'> -- By {{ articles.author }} at {{ articles.date }}</font></p>
+<br>
+<br>
+{% autoescape off %}
+<p align='center'>{{ articles.content }}</p>
+{% endautoescape %}
+<br>
+{% endfor %}
+{% else %}
+<h3>No blog post found</h3>
+{% endif %}
+{% endblock %}

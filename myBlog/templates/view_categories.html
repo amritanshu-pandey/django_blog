@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}<h1>Welcome to My blog Fellas</h1>{% endblock %}
+{% block nav-global %}
+<nav>
+<ul>
+<li><a href='{% url 'blog' %}'>Home</a></li>
+<li><a href='{% url 'admin:index' %}'>Admin</a></li>
+</ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<h2>Categories</h2>
+{% if v_categories %}
+	<nav>
+	{% for category in v_categories %}
+	<li>{{ category.name }}</li>
+	{% endfor %}
+	</nav>
+{% else %}
+	<p>There are no categories</p>
+{% endif %}
+{% endblock %}

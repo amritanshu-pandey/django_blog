@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<TITLE>
+{% block head_title %}Welcome to my Blog{% endblock %}
+</TITLE>
+</HEAD>
+
+<BODY>
+<div id="sidebar"> {% block sidebar %} {% block end %} </div>
+<div id="container">
+	<div id="menu">
+		{% block nav-global %}
+		{% end block %}
+	</div>
+	
+	<div id="content">
+		{% block content %}
+		{% end block %}
+	</div>
+</div>
+</BODY>
+</HTML>
+
