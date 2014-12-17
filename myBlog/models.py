@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+import datetime
 # Create your models here.
 
 class Article(models.Model):
+	USE_TZ = False
 	title =models.CharField(max_length=140)
 	date = models.DateTimeField(auto_now_add=True)
 	description = models.CharField(max_length=140)

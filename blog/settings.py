@@ -58,12 +58,12 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'blog',
-        'USER': 'root',
+        'ENGINE': 'django.db.backends.oracle',
+        'NAME': 'XE',
+        'USER': 'studies',
         'PASSWORD': 'lampard',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'PORT': '1521',
     }
 }
 STATIC_URL = '/static/'
